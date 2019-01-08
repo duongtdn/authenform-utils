@@ -1,6 +1,6 @@
 {
   "name": "authenform-utils",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "utilities for authentication form",
   "main": "index.js",
   "scripts": {
