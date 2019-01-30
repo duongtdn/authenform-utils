@@ -1,10 +1,12 @@
 {
   "name": "authenform-utils",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "utilities for authentication form",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clearn": "rm -rf dist/",
+    "build": "babel src --out-dir dist --source-maps",
+    "prepare": "npm run clean & npm run build"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/duongtdn/authenform-utils/issues"
   },
-  "homepage": "https://github.com/duongtdn/authenform-utils#readme"
+  "homepage": "https://github.com/duongtdn/authenform-utils#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.1",
+    "@babel/preset-env": "^7.3.1"
+  }
 }
