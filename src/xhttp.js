@@ -50,6 +50,22 @@ module.exports = {
       done(request.status, request.responseText)
     })  
     request.send(JSON.stringify(data));
+  },
+
+  delete(url, data, options, done) {
+    if (isFunction(options)) {
+      done = options
+    }
+    const request = new XMLHttpRequest()
+    request.open('DELETE', url, true)
+    request.setRequestHeader('Content-Type', 'application/json')
+    if (isObject(options) && options.authen && storage.get('token')) {
+      request.setRequestHeader('Authorization', `Bearer ${storage.get('token')}`)
+    }
+    request.addEventListener('load', () => {
+      done(request.status, request.responseText)
+    })  
+    request.send(JSON.stringify(data));
   }
 
 }
